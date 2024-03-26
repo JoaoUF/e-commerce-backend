@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="625cc468-6522-4bcd-9c1c-8f955947295c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/pagination/BasicPagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/pagination/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/ProductView.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/ProductView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/settings/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements/default.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/default.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +34,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.e-commerce.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/joaouf/PycharmProjects/e-commerce/manage/development.py",
-    "settings.editor.selected.configurable": "promo.django"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.e-commerce.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/joaouf/PycharmProjects/e-commerce/manage/development.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.django&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/requirements" />

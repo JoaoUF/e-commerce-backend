@@ -1,6 +1,6 @@
-from core.views.ProductView import product_list, product_detail
+from core.views.ProductView import ProductDetail, ProductList
 
 __all__ = [
-    product_detail,
-    product_list,
+    ProductDetail,
+    ProductList,
 ]

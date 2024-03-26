@@ -1,41 +1,28 @@
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from core.models.Product import Product
 from core.serializers.ProductSerializer import ProductSerializer
+from core.pagination.BasicPagination import CustomPagination
+from rest_framework import filters
+from rest_framework import generics
 
 
-@api_view(['GET', 'POST'])
-def product_list(request):
-    if request.method == 'GET':
-        products = Product.objects.all()
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
-
-    elif request.method == 'POST':
-        serializer = ProductSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+'''
+ - documentation: https://www.django-rest-framework.org/api-guide/filtering/
+ - filter example: http://example.com/api/products/?category=clothing&in_stock=True 
+ - search example: http://example.com/api/users/?search=russell 
+ - pagination: GET https://api.example.org/accounts/?limit=100&offset=400
+'''
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
+class ProductList(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['category']
+    search_fields = ['title']
+    pagination_class = CustomPagination
 
-    if request.method == 'GET':
-        serializer = ProductSerializer(product)
-        return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = ProductSerializer(product, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        product.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
